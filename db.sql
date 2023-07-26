@@ -1,8 +1,8 @@
--- MySQL dump 10.17  Distrib 10.3.24-MariaDB, for debian-linux-gnu (x86_64)
+-- MariaDB dump 10.19  Distrib 10.6.10-MariaDB, for debian-linux-gnu (x86_64)
 --
 -- Host: localhost    Database: asteriskdb
 -- ------------------------------------------------------
--- Server version	10.3.24-MariaDB-2
+-- Server version	10.6.10-MariaDB-1+b1
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -23,23 +23,27 @@ DROP TABLE IF EXISTS `cdr`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `cdr` (
-  `calldate` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `clid` varchar(80) NOT NULL DEFAULT '',
-  `src` varchar(80) NOT NULL DEFAULT '',
-  `dst` varchar(80) NOT NULL DEFAULT '',
-  `dcontext` varchar(80) NOT NULL DEFAULT '',
-  `channel` varchar(80) NOT NULL DEFAULT '',
-  `dstchannel` varchar(80) NOT NULL DEFAULT '',
-  `lastapp` varchar(80) NOT NULL DEFAULT '',
-  `lastdata` varchar(80) NOT NULL DEFAULT '',
-  `duration` int(11) NOT NULL DEFAULT 0,
-  `billsec` int(11) NOT NULL DEFAULT 0,
-  `disposition` varchar(45) NOT NULL DEFAULT '',
-  `amaflags` int(11) NOT NULL DEFAULT 0,
-  `accountcode` varchar(20) NOT NULL DEFAULT '',
-  `uniqueid` varchar(32) NOT NULL DEFAULT '',
-  `userfield` varchar(255) NOT NULL DEFAULT ''
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `clientName` varchar(255) DEFAULT NULL,
+  `clientId` varchar(255) DEFAULT NULL,
+  `extension` varchar(255) DEFAULT NULL,
+  `context` varchar(255) DEFAULT NULL,
+  `src` varchar(255) DEFAULT NULL,
+  `dst` varchar(255) DEFAULT NULL,
+  `dialstatus` varchar(255) DEFAULT NULL,
+  `application` varchar(255) DEFAULT NULL,
+  `start` varchar(50) DEFAULT NULL,
+  `answer` varchar(50) DEFAULT NULL,
+  `end` varchar(50) DEFAULT NULL,
+  `billsec` varchar(50) DEFAULT NULL,
+  `duration` varchar(50) DEFAULT NULL,
+  `disposition` varchar(255) DEFAULT NULL,
+  `amaflags` varchar(255) DEFAULT NULL,
+  `uniqueid` varchar(255) DEFAULT NULL,
+  `userfield` varchar(255) DEFAULT NULL,
+  `sequencenumber` varchar(50) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -60,4 +64,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-07-26 10:05:10
+-- Dump completed on 2023-07-26 12:13:46
