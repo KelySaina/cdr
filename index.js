@@ -39,8 +39,8 @@ app.get("/insert", (req, res) => {
 
         const linesArray = data.split('\n'); // Split by new line to get an array of lines
 
-        //const lastLine = linesArray[linesArray.length - 2]; // Get the last line (skip the empty line)
-        const fieldsArray = linesArray.split(','); // Split the last line by comma to get an array of fields
+        const lastLine = linesArray[linesArray.length - 2]; // Get the last line (skip the empty line)
+        const fieldsArray = lastLine.split(','); // Split the last line by comma to get an array of fields
 
 
 
